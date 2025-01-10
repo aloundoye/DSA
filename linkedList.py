@@ -83,9 +83,12 @@ class LinkedList:
         self.length -= 1
         return popped_node
 
-my = LinkedList()
-my.print_list()
-print('after')
-my.pop_first()
-my.print_list()        
+    def get(self, index):
+        if index < 0 or index >= self.length:
+            return None
+        
+        temp = self.head
+        for _ in range(index):
+            temp = temp.next
+        return temp
 
