@@ -32,7 +32,7 @@ class LinkedList:
 
     def pop(self):
         # 1. Empty list case
-        if self.head is None:
+        if self.length == 0:
             return None
 
         # 2. Single-node case
@@ -65,4 +65,27 @@ class LinkedList:
             new_node.next = self.head
             self.head = new_node
         self.length += 1
+
+    def pop_first(self):
+        if self.length == 0:
+            return None
+        
+        if self.head == self.tail:
+            popped_node = self.head
+            self.head = None
+            self.tail = None
+            self.length = 0
+            return popped_node
+        
+        popped_node = self.head
+        self.head = self.head.next
+        popped_node.next = None
+        self.length -= 1
+        return popped_node
+
+my = LinkedList()
+my.print_list()
+print('after')
+my.pop_first()
+my.print_list()        
 
