@@ -92,3 +92,7 @@ class LinkedList:
             temp = temp.next
         return temp
 
+my = LinkedList([1,2,3,4,5,6])
+my.print_list()
+print('after')
+print(my.get(3).value)       
