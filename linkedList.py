@@ -1,4 +1,7 @@
-from node import Node
+class Node:
+    def __init__(self, value):
+        self.value = value
+        self.next = None
 
 class LinkedList:
     def __init__(self, items=None):
@@ -91,8 +94,3 @@ class LinkedList:
         for _ in range(index):
             temp = temp.next
         return temp
-
-my = LinkedList([1,2,3,4,5,6])
-my.print_list()
-print('after')
-print(my.get(3).value)       
